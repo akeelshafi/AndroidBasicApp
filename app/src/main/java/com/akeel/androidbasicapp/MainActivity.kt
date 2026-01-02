@@ -19,5 +19,34 @@ class MainActivity : AppCompatActivity() {
             insets
         }
     }
+    override fun onStart(){
+        super.onStart()
+        Log.d("LIFE CYCLE","onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("LIFE CYCLE","onResume")
+    }
+
+    override fun onPause(){
+        super.onPause()
+        Log.d("LIFE CYCLE","onPause")
+    }
+
+    override fun onStop(){
+        super.onStop()
+        Log.d("LIFE CYCLE","onStop")
+    }
+
+    override fun onRestart(){
+        super.onRestart()
+        Log.d("LIFE CYCLE","onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("LIFE CYCLE","onDestroy")
+    }
 
 }
