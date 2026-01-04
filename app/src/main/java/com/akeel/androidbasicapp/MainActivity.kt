@@ -1,16 +1,19 @@
 package com.akeel.androidbasicapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.SecondActivity
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("LIFE CYCLE","onCreate")
+        Log.d("LIFE CYCLE", "onCreate")
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -18,35 +21,41 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
+        val intent = Intent(this, SecondActivity::class.java)
+        intent.putExtra("username", "Akeel")
+        startActivity(intent)
     }
-    override fun onStart(){
+
+    override fun onStart() {
         super.onStart()
-        Log.d("LIFE CYCLE","onStart")
+        Log.d("LIFE CYCLE", "onStart")
     }
 
     override fun onResume() {
         super.onResume()
-        Log.d("LIFE CYCLE","onResume")
+        Log.d("LIFE CYCLE", "onResume")
     }
 
-    override fun onPause(){
+    override fun onPause() {
         super.onPause()
-        Log.d("LIFE CYCLE","onPause")
+        Log.d("LIFE CYCLE", "onPause")
     }
 
-    override fun onStop(){
+    override fun onStop() {
         super.onStop()
-        Log.d("LIFE CYCLE","onStop")
+        Log.d("LIFE CYCLE", "onStop")
     }
 
-    override fun onRestart(){
+    override fun onRestart() {
         super.onRestart()
-        Log.d("LIFE CYCLE","onRestart")
+        Log.d("LIFE CYCLE", "onRestart")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("LIFE CYCLE","onDestroy")
+        Log.d("LIFE CYCLE", "onDestroy")
     }
 
 }
