@@ -18,14 +18,15 @@ class MainActivity : AppCompatActivity() {
         Log.d("LIFE CYCLE", "onCreate")
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        val textView = findViewById<TextView>(R.id.textView)
-        val btn = findViewById<Button>(R.id.button)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val textView = findViewById<TextView>(R.id.textView)
+        val btn = findViewById<Button>(R.id.button)
+
         textView.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("username", "This is the text from main screen")
